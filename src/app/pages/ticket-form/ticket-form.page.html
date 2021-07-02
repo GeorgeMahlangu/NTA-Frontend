@@ -1,0 +1,291 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ticket Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="ticketForm">
+    <ion-list-header mode="ios">
+      <ion-label>
+        Driver Particulars
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label position="floating" color="dark">ID</ion-label>
+      <ion-input formControlName="id" type="text" required [(ngModel)]="ticketDetails.id" readonly></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.id">
+        <div class="error-msg" *ngIf="ticketForm.get('id').hasError(validation.type) && ticketForm.get('id').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">First Name</ion-label>
+      <ion-input formControlName="firstname" type="text" required [(ngModel)]="ticketDetails.firstname"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.firstname">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('firstname').hasError(validation.type) && ticketForm.get('firstname').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Last Name</ion-label>
+      <ion-input formControlName="lastname" type="text" required [(ngModel)]="ticketDetails.lastname"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.lastname">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('lastname').hasError(validation.type) && ticketForm.get('lastname').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Cell Number</ion-label>
+      <ion-input type="tel" formControlName="cellnumber" maxlength="10" required [(ngModel)]="ticketDetails.cellnumber"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.cellnumber">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('cellnumber').hasError(validation.type) && ticketForm.get('cellnumber').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark"> Email</ion-label>
+      <ion-input formControlName="email" type="text" required [(ngModel)]="ticketDetails.email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('email').hasError(validation.type) && ticketForm.get('email').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Address</ion-label>
+      <ion-input formControlName="address" type="text" required [(ngModel)]="ticketDetails.address"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.address">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('address').hasError(validation.type) && ticketForm.get('address').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-list-header mode="ios">
+      <ion-label>
+        Licence Particulars
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">licence Code</ion-label>
+      <ion-input formControlName="licenceCode" type="text" required [(ngModel)]="ticketDetails.licenceCode"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.licenceCode">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('licenceCode').hasError(validation.type) && ticketForm.get('licenceCode').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">PrDP</ion-label>
+      <ion-input formControlName="PrDP" type="text" required [(ngModel)]="ticketDetails.PrDP"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.PrDP">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('PrDP').hasError(validation.type) && ticketForm.get('PrDP').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Date Issued</ion-label>
+      <ion-datetime formControlName="dateIssued" required [(ngModel)]="ticketDetails.dateIssued" displayFormat="YYYY-MM-DD" ></ion-datetime>
+      <!-- <ion-input ></ion-input> -->
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.dateIssued">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('dateIssued').hasError(validation.type) && ticketForm.get('dateIssued').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Expiry Date</ion-label>
+      <ion-datetime formControlName="expiryDate"  required [(ngModel)]="ticketDetails.expiryDate" displayFormat="YYYY-MM-DD" ></ion-datetime>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.expiryDate">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('expiryDate').hasError(validation.type) && ticketForm.get('expiryDate').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-list-header mode="ios">
+      <ion-label>
+        Motor Vehicle Particulars
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Vehicle Owner</ion-label>
+      <ion-input formControlName="vehicleOwner" type="text" required [(ngModel)]="ticketDetails.vehicleOwner">
+      </ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.vehicleOwner">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('vehicleOwner').hasError(validation.type) && ticketForm.get('vehicleOwner').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Vehicle Registered Address</ion-label>
+      <ion-input formControlName="vehicleRegisteredAddress" type="text" required
+        [(ngModel)]="ticketDetails.vehicleRegisteredAddress"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.vehicleRegisteredAddress">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('vehicleRegisteredAddress').hasError(validation.type) && ticketForm.get('vehicleRegisteredAddress').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Vehicle Type</ion-label>
+      <ion-input formControlName="vehicleType" type="text" required [(ngModel)]="ticketDetails.vehicleType"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.vehicleType">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('vehicleType').hasError(validation.type) && ticketForm.get('vehicleType').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Model</ion-label>
+      <ion-input formControlName="model" type="text" required [(ngModel)]="ticketDetails.model"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.model">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('model').hasError(validation.type) && ticketForm.get('model').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">licence Disk NO</ion-label>
+      <ion-input formControlName="licenceDisk" type="text" required [(ngModel)]="ticketDetails.licenceDisk"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.licenceDisk">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('licenceDisk').hasError(validation.type) && ticketForm.get('licenceDisk').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Vehicle Colour</ion-label>
+      <ion-input formControlName="vehicleColour" type="text" required [(ngModel)]="ticketDetails.vehicleColour">
+      </ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.vehicleColour">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('vehicleColour').hasError(validation.type) && ticketForm.get('vehicleColour').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-list-header mode="ios">
+      <ion-label>
+        Infringement  Particulars
+      </ion-label>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-label position="floating" color="dark">Charge Code</ion-label>
+      <ion-input formControlName="chargeCode" type="text" required [(ngModel)]="ticketDetails.chargeCode"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.chargeCode">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('chargeCode').hasError(validation.type) && ticketForm.get('chargeCode').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">chargeType</ion-label>
+      <ion-input formControlName="chargeType" type="text" required [(ngModel)]="ticketDetails.chargeType"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.chargeType">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('chargeType').hasError(validation.type) && ticketForm.get('chargeType').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating" color="dark">Penalty</ion-label>
+      <ion-input formControlName="penalty" type="number" required [(ngModel)]="ticketDetails.penalty"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.penalty">
+        <div class="error-msg"
+          *ngIf="ticketForm.get('penalty').hasError(validation.type) && ticketForm.get('penalty').touched">
+          <span class="error">{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
+
+   
+
+
+  </form>
+  <ion-button expand="block" color="danger" (click)="submit()">Submit</ion-button>
+</ion-content>

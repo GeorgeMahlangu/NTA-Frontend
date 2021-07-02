@@ -1,0 +1,62 @@
+.Sign-up {
+    font-size: 30px;
+    font-weight: bold;
+}
+ion-container{
+    top: 7px;
+    position: absolute;
+}
+:host {
+    .item-interactive.ion-invalid{
+        --highlight-background:transparent;
+    }
+    .item-interactive.ion-valid{
+        --highlight-background:transparent;
+    }
+    
+}
+ion-label{
+    color:black !important;
+}
+ion-toolbar {
+    --background: transparent;
+    --background-color: transparent;
+    --ion-color-base: transparent !important;
+}
+ion-item{
+    ion-input {
+        --padding-start: 0px;
+    }
+}
+.validation-errors {
+    color: red;
+    padding-left: 16px;
+}
+
+// ion-content {
+//     --background: #f2f2f2;
+//     ion-item {
+//         --background: #f2f2f2;
+//     }
+//     ion-list {
+//         background: transparent;
+//         ion-item {
+//             --background: #f2f2f2;
+//         }
+//     }
+// }
+
+// .questions {
+//     ion-label {
+//         padding-bottom: 20px;
+//     }
+//     ion-input {
+//         border-radius: 10px;
+//         border: 1px solid black;
+//         --padding-start: 20px;
+//     }
+// }
+
+.validation-errors {
+    color: red;
+}

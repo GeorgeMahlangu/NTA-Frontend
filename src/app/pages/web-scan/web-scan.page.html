@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="end" (click)="close()">
+            <ion-button>
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Scan Qr code</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <!-- <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+                    <ion-icon slot="start" name="refresh"></ion-icon>
+                    Reset
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+
+    <ion-card>
+        <video #video [hidden]="!scanActive" width="100%"></video>
+    </ion-card>
+    <canvas #canvas hidden></canvas>
+
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+                    <ion-icon slot="start" name="close"></ion-icon>
+                    Stop scan
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

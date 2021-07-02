@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="fullheight xc">
+    <form [formGroup]="IDForm">
+      <ion-item>
+        <ion-label position="floating" color="dark">ID</ion-label>
+        <ion-input maxlength="13" formControlName="ID" type="text"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.ID">
+          <div class="error-msg" *ngIf=" IDForm .get('ID').hasError(validation.type) &&  IDForm.get('ID').touched">
+            <span class="error">{{ validation.message }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </form>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" color="danger" (click)="submit()">Submit</ion-button>
+        </ion-col>
+        <!-- <ion-col>
+        <ion-button expand="full" color="secondary" (click)="clear()">Clear</ion-button>
+      </ion-col> -->
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

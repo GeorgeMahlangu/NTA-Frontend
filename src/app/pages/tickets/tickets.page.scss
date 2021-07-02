@@ -1,0 +1,39 @@
+ion-title{
+    text-align: center;
+}
+ion-content {
+    ion-toolbar {
+        ion-searchbar {
+            padding-top: 17px;
+        }
+        .sc-ion-buttons-ios-h {
+            padding-top: 10px;
+        }
+    }
+}
+
+ion-card {
+    .ImgContainer {
+        text-align: center;
+        color: black !important;
+        .ion-col-border{
+            border-left: 1px solid #dad7d7;
+        }
+        ion-col {
+            width: 100% !important;
+            height: 90px;
+            overflow: hidden;
+            img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover;
+            }
+        }
+    }
+    ion-footer {
+        border-top: 1px solid #f7f7f7;
+    }
+}
+.centerT{
+    text-align: center;
+}

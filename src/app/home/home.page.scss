@@ -1,0 +1,33 @@
+ion-title{
+  text-align: center;
+}
+ion-item{
+    ion-input {
+        --padding-start: 0px;
+    }
+  }
+  
+  
+  :host {
+    .item-interactive.ion-invalid{
+        --highlight-background:transparent;
+    }
+    .item-interactive.ion-valid{
+        --highlight-background:transparent;
+    }
+    
+}
+ion-label{
+    color:black !important;
+}
+  .validation-errors {
+    color: red;
+    padding-left: 16px;
+  }
+
+  .fullheight {
+    padding-top: 50%;
+  }
+  
+  
+  

@@ -1,0 +1,68 @@
+<ion-content class="ion-padding" fullscreen>
+
+  <ion-row>
+    <ion-col>
+      <div id="logo">
+        <img src="assets\img\logo.png">
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <form [formGroup]="login">
+   
+    <ion-list>
+      <ion-item >
+        <ion-label position="floating" color="dark">Email</ion-label>
+        <ion-input type="email" formControlName="email" [(ngModel)]=" signInDetails.email"></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-msg" *ngIf="login.get('email').hasError(validation.type) && login.get('email').touched">
+            <span class="error">{{ validation.message }}</span>
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item >
+        <ion-label position="floating" color="dark"> Password</ion-label>
+        <ion-input type="text" formControlName="password" [(ngModel)]=" signInDetails.password"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-msg"
+            *ngIf="login.get('password').hasError(validation.type) && login.get('password').touched">
+            <span class="error">{{ validation.message }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </ion-list>
+  </form>
+  <ion-button expand="block" color="danger" (click)="loginF()">Login</ion-button>
+
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col> -->
+      <!-- </ion-col>
+    </ion-row> -->
+
+   
+      <ion-row>
+          <!-- Reset your password button -->
+          <ion-col class="ion-text-center forgot">
+             <span  > Forgot password</span>
+          </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+          <!-- Signup now button -->
+          <ion-col  class="ion-text-center">
+             Don't have an account <a (click)="onSignUp()">Sign Up</a>
+          </ion-col>
+      </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,29 @@
+:host {
+    .item-interactive.ion-invalid{
+        --highlight-background:transparent;
+    }
+    .item-interactive.ion-valid{
+        --highlight-background:transparent;
+    }
+  
+   
+}
+ion-list-header {
+    padding-left: 15px;
+    ion-label {
+        margin-top: 10px;
+    }
+}
+ion-label{
+    color:black !important;
+}
+ion-item{
+    ion-input {
+        --padding-start: 0px;
+    }
+}
+.validation-errors {
+    color: red;
+    padding-left: 16px;
+}
+

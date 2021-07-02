@@ -1,0 +1,44 @@
+ion-title{
+    text-align: center;
+}
+.login-form{
+  
+    // margin-top: 20px;
+    .txt-center{
+        text-align: center;
+    }
+    margin-bottom: 50px;
+    ion-input[type=text]{
+        text-align: center; 
+        border: 1px solid ;
+        border-radius: 5px;
+    }
+    ion-input[type=tel]{
+        text-align: center; 
+        border: 1px solid ;
+        border-radius: 5px;
+    }
+    ion-input[type=password]{
+        text-align: center;
+        border: 1px solid ;
+        border-radius: 5px;
+    }
+    
+    ion-datetime{
+        text-align: center;
+        border: 1px solid ;
+        border-radius: 5px;
+        width: 100%;
+    }
+    ion-input[type=select]{
+     
+        border: 1px solid ;
+        border-radius: 5px;
+    }
+    // ion-input[type=number]{
+    //     text-align: center;
+    //     border: 1px solid ;@extend .color-primary;
+    //     border-radius: 5px;
+    // }
+  
+}
